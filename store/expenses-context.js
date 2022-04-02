@@ -58,7 +58,7 @@ const DUMMY_EXPENSES = [
     id: 'e10',
     description: 'Another book',
     amount: 18.59,
-    date: new Date('2022-02-18'),
+    date: new Date('2022-04-01'),
   },
 ];
 
@@ -105,7 +105,18 @@ function ExpensesContextProvider({ children }) {
     dispatch({ type: 'UPDATE', payload: { id: id, data: expenseData } });
   }
 
-  return <ExpensesContext.Provider>{children}</ExpensesContext.Provider>;
+  const value = {
+    expenses: expensesState,
+    addExpense,
+    deleteExpense,
+    updateExpense,
+  };
+
+  return (
+    <ExpensesContext.Provider value={value}>
+      {children}
+    </ExpensesContext.Provider>
+  );
 }
 
 export default ExpensesContextProvider;
