@@ -1,5 +1,5 @@
-import { useContext, useLayoutEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, Alert } from 'react-native';
+import { useState } from 'react';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import Input from './Input';
 import Button from '../UI/Button';
 import { GlobalStyles } from '../../constants/styles';
